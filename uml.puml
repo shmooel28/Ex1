@@ -1,0 +1,43 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Buildings --> Elevator
+Elevator --> CallForElevator
+
+
+
+class Buildings {
+-elevators[]
+-up_elevator[]
+-down_elevator[]
+-rest_elevator[]
+-minFloor
+-maxFloor
++update_elevator
+}
+
+class Elevator {
+-pos
+-stopTime
+-startTime
+-speed
+-State
+-TimeForClose
+-TimeForOpen
+-MaxFloor
+-MinFloor
+-id
++travel_time()
++temp_location()
++mid_dest_time()
+}
+class CallForElevator{
+-name
+-time
+-src
+-dest
+-state
+-elevator_index
++call_direction()
+}
+@enduml
